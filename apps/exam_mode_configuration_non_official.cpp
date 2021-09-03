@@ -33,7 +33,7 @@ KDColor ExamModeConfiguration::examModeColor(GlobalPreferences::ExamMode mode) {
 }
 
 bool ExamModeConfiguration::appIsForbiddenInExamMode(App::Descriptor::ExaminationLevel appExaminationLevel, GlobalPreferences::ExamMode mode) {
-  if (mode == GlobalPreferences::ExamMode::NoSymNoText) {
+  if (mode == GlobalPreferences::ExamMode::NoSymNoText || mode == GlobalPreferences::ExamMode::NoSym) {
     return appExaminationLevel == App::Descriptor::ExaminationLevel::Basic;
   }
   return false;
